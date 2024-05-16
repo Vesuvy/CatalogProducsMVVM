@@ -1,0 +1,29 @@
+﻿<Window x:Class="CatalogProducsMVVM.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CatalogProducsMVVM"
+        xmlns:vm="clr-namespace:CatalogProductsMVVM.ViewModel"
+        xmlns:view="clr-namespace:CatalogProductsMVVM.View"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0">
+            <ComboBox ItemsSource="{Binding SortOptions}" SelectedItem="{Binding SelectedSortOption}" Width="200" Margin="5"/>
+            <ComboBox ItemsSource="{Binding Producers}" SelectedItem="{Binding SelectedProducer}" Width="200" Margin="5"/>
+            <TextBox Text="{Binding SearchText}" Width="200" Margin="5"/>
+            <Button Content="ПОИСК" Command="{Binding SearchCommand}" Margin="5"/>
+        </StackPanel>
+        <ListView Grid.Row="2" ItemsSource="{Binding AllProducts}" ScrollViewer.VerticalScrollBarVisibility="Auto">
+            
+        </ListView>
+    </Grid>
+</Window>
