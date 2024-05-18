@@ -11,18 +11,6 @@ namespace CatalogProducsMVVM.ViewModel
 {
     public class DataManageVM : ViewModelBase
     {
-        private List<Product> allProducts = DataWorker.GetAllProducts();
-        public List<Product> AllProducts
-        {
-            get => allProducts;
-            set { allProducts = value; OnPropertyChanged(nameof(AllProducts)); }
-        }
-
-        private List<Category> allCategories = DataWorker.GetAllCategories();
-        public List<Category> AllCategories
-        {
-            get => allCategories;
-            set { allCategories = value; OnPropertyChanged(nameof(AllCategories)); }
-        }
+        
     }
 }

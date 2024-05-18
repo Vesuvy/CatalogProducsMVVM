@@ -17,7 +17,7 @@ namespace CatalogProductsMVVM.Utilities
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=LAPTOP-0BEQOP00\\SQLEXPRESS;Database=Makarov_Catalog_DB;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer("Server=LAPTOP-0BEQOP00\\SQLEXPRESS;Database=Makarov_Catalog_DB;Trusted_Connection=True; TrustServerCertificate=True;");
         }
     }
 }

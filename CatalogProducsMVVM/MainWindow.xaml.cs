@@ -1,5 +1,6 @@
-﻿using CatalogProducsMVVM.ViewModel;
+﻿using CatalogProductsMVVM.ViewModel;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace CatalogProducsMVVM
 {
@@ -8,10 +9,12 @@ namespace CatalogProducsMVVM
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static ItemsControl? AllProductsView;
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new DataManageVM();
+            DataContext = new MainWindowViewModel();
+            AllProductsView = ViewAllProducts;
         }
     }
 }

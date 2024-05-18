@@ -5,25 +5,45 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CatalogProductsMVVM.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="Auto"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
+             d:DesignHeight="350" d:DesignWidth="800">
+    <Grid Background="#9ebae8">
+        <Image Source="{Binding Photo}" Width="100" Height="100" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="5"/>
+        <StackPanel VerticalAlignment="Top" Margin="120,5,0,0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
-        <Image Grid.Column="0" Source="{Binding Photo}" Width="100" Height="100"/>
-        <StackPanel Grid.Column="1">
-            <TextBlock Text="{Binding Title}"/>
-            <TextBlock Text="{Binding Price}"/>
-            <TextBlock Text="{Binding Producer}"/>
-            <TextBlock Text="{Binding Category.Title}"/>
-            <TextBlock Text="{Binding Quantity}"/>
+                <TextBlock Text="Название:" Grid.Row="0" Grid.Column="0" />
+                <TextBlock Text="{Binding Title}" FontWeight="Bold" Grid.Row="0" Grid.Column="1"/>
+
+                <TextBlock Text="Производитель:" Grid.Row="1" Grid.Column="0"/>
+                <TextBlock Text="{Binding Producer}" Grid.Row="1" Grid.Column="1"/>
+
+                <TextBlock Text="Описание:" Grid.Row="2" Grid.Column="0"/>
+                <TextBlock Text="{Binding Description}" Grid.Row="2" Grid.Column="1"/>
+
+                <TextBlock Text="Количество:" Grid.Row="3" Grid.Column="0"/>
+                <TextBlock Text="{Binding Quantity}" Grid.Row="3" Grid.Column="1"/>
+
+                <TextBlock Text="Цена:" Grid.Row="4" Grid.Column="0"/>
+                <TextBlock Text="{Binding Cost}" Grid.Row="4" Grid.Column="1"/>
+
+                <TextBlock Text="Категория:" Grid.Row="5" Grid.Column="0"/>
+                <TextBlock Text="{Binding Category.Title}" Grid.Row="5" Grid.Column="1"/>
+
+
+            </Grid>
+            
         </StackPanel>
     </Grid>
 </UserControl>

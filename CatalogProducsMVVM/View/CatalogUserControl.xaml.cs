@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using CatalogProductsMVVM.ViewModel;
+using System.ComponentModel;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace CatalogProductsMVVM.View
 {
@@ -24,5 +13,24 @@ namespace CatalogProductsMVVM.View
         {
             InitializeComponent();
         }
+
+        /*public CatalogUserControl()
+        {
+            InitializeComponent();
+            DataContextChanged += (sender, args) =>
+            {
+                if (DataContext is CatalogViewModel viewModel)
+                {
+                    // Subscribe to the PropertyChanged event of the Product
+                    viewModel.Product.PropertyChanged += Product_PropertyChanged;
+                }
+            };
+        }
+
+        private void Product_PropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            // Update the UI when the Product properties change
+            this.InvalidateVisual();
+        }*/
     }
 }
